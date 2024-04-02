@@ -4,7 +4,15 @@ import {SafeAreaView, Text, Button, View} from 'react-native';
 import axios from 'axios';
 
 function fetchData() {
-  const response = axios.get('https://jsonplaceholder.typicode.com/users');
+  console.log('1');
+  axios
+    .get('https://jsonplaceholder.typicode.com/users')
+    .then(response => {
+      console.log(response);
+      console.log('3');
+    })
+    .catch(error => console.log(error));
+  console.log('2');
 }
 
 function App() {
